@@ -1,0 +1,9 @@
+{
+  "name": "node-http-proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "anyproxy": "^4.1.0"
+  }
+}
