@@ -4,7 +4,8 @@ const options = {
   rule: {
     *beforeSendRequest(requestDetail) {
       // proxy from http://1.2.3.4 to http://localhost:8089
-      if (requestDetail.url.startsWith('http://1.2.3.4/')) {
+      const proxyFrom = 'http://1.2.3.4/';
+      if (requestDetail.url.startsWith(proxyFrom)) {
         let newRequestOptions = requestDetail.requestOptions;
         requestDetail.protocol = 'http';
         newRequestOptions.hostname = 'localhost'
