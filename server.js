@@ -4,12 +4,13 @@ const options = {
   rule: {
     *beforeSendRequest(requestDetail) {
       // proxy from http://1.2.3.4 to http://localhost:8089
-      const proxyFrom = 'http://1.2.3.4/';
+      const proxyFrom = 'http://127.0.0.1:8222';
+      console.log('url------',requestDetail.url);
       if (requestDetail.url.startsWith(proxyFrom)) {
         let newRequestOptions = requestDetail.requestOptions;
         requestDetail.protocol = 'http';
-        newRequestOptions.hostname = 'localhost'
-        newRequestOptions.port = '8089';
+        newRequestOptions.hostname = 'wordpress-demo.com'
+        newRequestOptions.port = '80';
         return requestDetail;
       }
       return requestDetail;
